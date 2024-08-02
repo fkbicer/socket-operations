@@ -11,6 +11,8 @@ socket.on("connect", () => {
     displayMessage(`you connected with id: ${socket.id}`);
 });
 
+socket.on('recieve-message' , message => {displayMessage(message)})
+
 
 form.addEventListener("submit", e => {
     e.preventDefault()
