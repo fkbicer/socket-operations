@@ -8,8 +8,9 @@ const form = document.getElementById("form")
 const socket = io('http://localhost:3000')
 
 socket.on("connect", () => {
-    displayMessage(`you connected with id: ${socket.id}`); // Template literal kullanarak dinamik id'yi ekleyin
+    displayMessage(`you connected with id: ${socket.id}`);
 });
+
 
 form.addEventListener("submit", e => {
     e.preventDefault()
@@ -18,6 +19,7 @@ form.addEventListener("submit", e => {
 
     if (message === "") return
     displayMessage(message)
+    socket.emit("send-message", message)
 
     messageInput.value = ""
 })
