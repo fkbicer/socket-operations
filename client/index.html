@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #fff; /* Arka plan rengini beyaz yaparak tüm içerikleri kapsar */
+    }
+
+    #message-container {
+      flex-grow: 1;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge ekleme */
+    }
+
+    #form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background-color: #f9f9f9; /* Form alanı için arka plan rengi */
+    }
+
+    #message-input, #room-input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #send-button, #room-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      background-color: #007bff;
+      transition: background-color 0.3s ease; /* Geçiş efekti ekleme */
+    }
+
+    #send-button:hover {
+      background-color: #0056b3;
+    }
+
+    #room-button {
+      background-color: #28a745;
+    }
+
+    #room-button:hover {
+      background-color: #218838;
+    }
+
+    label {
+      margin-right: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+  </style>
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="message-container"></div>
+    <form id="form">
+      <label for="message-input">Message:</label>
+      <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off" required>
+      <button type="submit" id="send-button">Send</button>
+
+      <label for="room-input">Room:</label>
+      <input type="text" id="room-input" placeholder="Enter room name..." autocomplete="off" required>
+      <button type="button" id="room-button">Join</button>
+    </form>
+  </div>
+</body>
+</html>
