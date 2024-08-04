@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "client": "file:",
     "socket.io-client": "^4.7.5"
   }
 }
